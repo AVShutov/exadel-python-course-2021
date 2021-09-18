@@ -12,7 +12,7 @@ def area_base_height():
 
 def area_by_sides_and_angle():
     values = input("Enter 2 sides and angle(degrees) between them: ").split(" ")
-    if len(values) != 3 or not all(i.isdigit() for i in values) or not all(int(i) >= 0 for i in values):
+    if len(values) != 3 or not all(i.isdigit() for i in values) or not all(int(i) > 0 for i in values):
         print("Check values (only three positive numbers greater than zero are allowed).")
         return area_by_sides_and_angle()
     else:
