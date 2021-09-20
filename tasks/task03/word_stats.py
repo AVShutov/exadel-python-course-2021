@@ -21,7 +21,8 @@ def print_stats(word_stats):
         print(f"{i}\t{word_stats[i]['word_count']}\t{word_stats[i]['line_number']}")
 
 for text in texts:
-    for word in re.sub('([^A-z^\s])+', '', text).lower().split():
+   word_list = re.sub('([^A-z^\s])+', '', text).lower().split()
+    for word in word_list:
         word_statistics(word_stats)
     line += 1
 print_stats(word_stats)
