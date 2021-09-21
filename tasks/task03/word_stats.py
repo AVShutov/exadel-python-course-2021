@@ -8,6 +8,12 @@ texts = [
 
 word_stats = {}
 
+def word_statistics(word_stats):
+        if (word not in word_stats):
+            word_stats[word] = {'word_count': 1,'line_number': line}
+        else:
+            word_stats[word]['word_count'] += 1
+
 def print_stats(word_stats):
     print("word\tcount\tfirst line")
     for i in word_stats:
@@ -16,9 +22,6 @@ def print_stats(word_stats):
 for line, text in enumerate(texts):
     word_list = re.sub('([^A-z^\s])+', '', text).lower().split()
     for word in word_list:
-        if (word not in word_stats):
-            word_stats[word] = {'word_count': 1,'line_number': line}
-        else:
-            word_stats[word]['word_count'] += 1
+        word_statistics(word_stats)
 
 print_stats(word_stats)
