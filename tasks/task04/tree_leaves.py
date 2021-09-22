@@ -24,6 +24,8 @@ def collect_leaves(data):
     
 # print(tree.values())
 # print(tree.items())
+print(collect_leaves(tree))
+print(collect_leaves(flat_tree))
 
 assert collect_leaves(tree) == [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
