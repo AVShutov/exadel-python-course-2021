@@ -30,7 +30,7 @@ print(collect_leaves(flat_tree))
 assert collect_leaves(tree) == [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 # edge case: flat tree, i.e. list
-assert collect_leaves(flat_tree) == [1, 2, 6]
+assert collect_leaves(flat_tree) == [1, 2, 3]
 
 # assert example
 assert my_pow(5, 3) == 125
