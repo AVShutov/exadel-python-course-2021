@@ -1,9 +1,9 @@
-def create_user(*user, age=42, **extra):
+def create_user(name: str, surname: str, age:int =42, **kwargs):
     return {
-        'name': user[0],
-        'surname': user[1],
+        'name': name,
+        'surname': surname,
         'age': age,
-        'extra': extra
+        'extra': kwargs
     }
 
 assert create_user("John", "Doe") == \
