@@ -22,9 +22,6 @@ class Order:
 class OrderRepository:
     def __init__(self):
         self.orders = []
-    
-    def info(self):
-        return self.orders
 
     def add(self, order: Order):
         self.orders.append(order)
@@ -41,9 +38,7 @@ class OrderRepository:
             return self.orders[-n_latest:]
 
     def delete(self, order_id: uuid):
-        for item in self.orders:
-            if item.order_id == order_id:
-                self.orders.remove(item)
+        self.orders.remove(self.get(order_id))
 
 
 f1 = Good(uuid.uuid4(), "Ronaldo", 1000)
